@@ -1,0 +1,174 @@
+//<Lab> --USER-DEFINED:  SIMPLE DATA TYPES, STRING TYPES  Lab 6
+//CSIS 111-D02
+//Sourcecode from textbook resource download C++ Programming: From Problem Analysis to Program ... | 8th Ed D.S. Malik
+//Chapter 6 - 6 example code
+
+
+//Include statements
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+//Global declarations: Constants and type definitions only -- no variables
+
+//Fumction prototypes
+
+float calculateFeet(int w, int h, int l);
+ 
+int main()
+
+{
+
+//Assignment
+	cout << "Marshall Mutumanje -- Lab Number 6" << endl << endl;
+
+	
+//Variable declarations
+	char productLetter;
+	float total = 0, cost = 0;
+
+	cout << setprecision(2) << fixed; //value = precision to 2
+	
+//Program logic									 
+//execute the while loop until the value of character variable is not 'T'
+//First instruct:
+
+	cout << "INSTRUCTIONS" << endl;
+	cout << "_____________" << endl;
+	cout << endl;
+	cout << "Please enter product code (P,F,C,M,O)" << endl;
+	cout << "Use the following case sensitive format" << endl;
+	cout << "[Code][Count][Width] [height] [length]" << endl;
+	cout << "Example : F 2 2 4 10 (Fir Qty:2 W:2 H:4 L:10)" << endl;
+	cout << "Enter code [T] when order is complete" << endl;
+
+	while (true)
+
+	{
+//input instructions for the user:
+		
+		cout << endl;
+		cout << "Enter Order :  ";
+
+		cin >> productLetter;// get the input from the user
+
+		if (productLetter != 'T')
+
+		{
+
+			int pieceType, width, height, length;
+
+//get the input from the user for number of pieces W,H,L
+
+			cin >> pieceType;
+
+			cin >> width;
+
+			cin >> height;
+
+			cin >> length;
+
+//function calculateFeet() will be called.
+
+			switch (productLetter)
+
+			{
+
+			case 'P':
+
+				cost = (0.89 * pieceType * calculateFeet(width, height, length));
+
+//print 
+
+				cout << pieceType << " " << width << "x" << height << "x" << length << " " << "Pine," << " cost: " << "$" << cost << " ";
+
+				break;
+
+			case 'F':
+
+				cost = (1.09 * pieceType * calculateFeet(width, height, length));
+
+//print  
+
+				cout << pieceType << " " << width << "x" << height << "x" << length << " " << "Fir," << " cost: " << "$" << cost << " ";
+
+				break;
+
+			case 'C':
+
+				cost = (2.26 * pieceType * calculateFeet(width, height, length));
+
+//print  
+
+				cout << pieceType << " " << width << "x" << height << "x" << length << " " << "Cedar," << " cost: " << "$" << cost << " ";
+
+				break;
+
+			case 'M':
+
+				cost = (4.50 * pieceType * calculateFeet(width, height, length));
+
+//print  
+
+				cout << pieceType << " " << width << "x" << height << "x" << length << " " << "Maple," << " cost: " << "$" << cost << " ";
+
+				break;
+
+			case 'O':
+
+				cost = (3.10 * pieceType * calculateFeet(width, height, length));
+
+//print  
+
+				cout << pieceType << " " << width << "x" << height << "x" << length << " " << "Oak," << " cost: " << "$" << cost << " ";
+
+				break;
+
+			}
+
+			total += cost;//add cost to total
+
+		}
+
+//if user enters 'T' then print total cost
+
+		else
+
+		{
+
+			//print statement to display the total cost when the user input char 'T'
+
+			cout << "Your Total C: $" << total << " ";
+
+			break;
+
+		}
+
+	}
+
+
+//Closing program statements;
+	system("pause");
+	return 0;
+
+}//end of main() function
+
+//definition of the called function
+
+float calculateFeet(int w, int h, int l)
+
+{
+
+	float feet = ((w * h * l) / 12.0);
+
+	return feet;
+
+}
+
+ 
+	
+
+ 
