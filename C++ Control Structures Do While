@@ -1,9 +1,7 @@
-//<Lab> -- Control Structure DO WHILE FOR CASE Lab 4
-//CSIS 111-D02
 //<Sources> ++ How to Program, 10/e by Harvey Deitel; Paul Deitel:: use of <pointers> <setw> and other <formatting>
 
 
-// Include and header declarations 
+//Include and header declarations 
 #include <iostream>
 
 #include <string>
