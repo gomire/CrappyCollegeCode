@@ -1,8 +1,4 @@
-//<Lab> --USER-DEFINED:  SIMPLE DATA TYPES, STRING TYPES  Lab 6
-//CSIS 111-D02
 //Sourcecode from textbook resource download C++ Programming: From Problem Analysis to Program ... | 8th Ed D.S. Malik
-//Chapter 6 - 6 example code
-
 
 //Include statements
 #include <iostream>
